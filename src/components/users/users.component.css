@@ -1,3 +1,4 @@
+/* src/app/user-table/user-table.component.css */
 body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
@@ -9,6 +10,10 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+}
+.img{
+    height: 70px;
+    width: 70px;
 }
 
 .filter-button {
@@ -57,10 +62,7 @@ body {
     background-color: #333;
     color: #fff;
 }
-.img{
-    width: 50px;
-    height: 50px;
-}
+
 .user-table th,
 .user-table td {
     padding: 15px;
@@ -72,6 +74,14 @@ body {
     background-color: #f1f1f1;
 }
 
+.user-table tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.user-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
 .user-table img {
     border-radius: 50%;
     margin-right: 10px;
@@ -81,12 +91,12 @@ body {
 .badge {
     padding: 5px 10px;
     border-radius: 5px;
-    color: #100000;
+    color: #fff;
     font-size: 12px;
 }
 
 .badge.loyal { background-color: #5bc0de; }
 .badge.partner { background-color: #f0ad4e; }
 .badge.team { background-color: #5cb85c; }
-.badge.lead { background-color: #d9534f; }
+.badge.inactive { background-color: #d9534f; }
 .badge.active { background-color: #0275d8; }
