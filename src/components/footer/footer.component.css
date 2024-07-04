@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.footer {
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #ddd;
+}
+
+.footer-title {
+    font-size: 24px;
+    color: #008000; /* Green color */
+}
+
+.footer-description {
+    font-size: 16px;
+    color: #000; /* Black color */
+    margin: 10px 0;
+}
+
+.footer-icons {
+    margin-top: 15px;
+}
+
+.icon-link {
+    color: #008000; /* Green color */
+    margin: 0 10px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.icon-link:hover {
+    color: #000; /* Black color */
+}
