@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Table</title>
+  
+</head>
+<body>
+ <!-- src/app/user-table/user-table.component.html -->
+<div class="filter-container">
+    <button class="filter-button">+ Add Filter</button>
+    <div class="filter">
+        <span>Role is not Administrator</span>
+        <button class="remove-filter">×</button>
+    </div>
+</div>
+<div class="user-table-container">
+    <div class="user-count">
+        <span>{{users.length}} / <strong>{{users.length}}</strong> users</span>
+    </div>
+    <table class="user-table">
+        <thead>
+            <tr>
+                <th>USERNAME</th>
+                <th>User Image</th>
+                <th>Account Type</th>
+                <th>E-MAIL</th>
+                <th>Email CONFIRMED</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{ user.name }}</td>
+                <td><img [src]="getFullImageUrl(user.image)" alt="User Image" class="img"></td>
+                <span class="badge" [ngClass]="getBadgeClass(user.accountType)">
+                    {{ user.accountType }}
+                  </span>
+                <td>{{ user.email}}</td>
+                <td>{{user.emailConfirmed}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
