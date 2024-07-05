@@ -1,0 +1,39 @@
+<div class="container mt-3">
+  <h2 class="my-5">All Projects</h2>
+  <ng-container *ngIf="charityProjects">
+    <ng-container *ngFor="let charityName of getCharityNames()">
+      <h3>Charity Name : {{ charityName }}</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Project Name</th>
+              <th scope="col">Funding Goal</th>
+              <th scope="col">Amount Raised</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let project of charityProjects[charityName]">
+              <td>{{ project.title }}</td>
+              <td>{{ project.fundingGoal }}</td>
+              <td>{{ project.amountRaised }}</td>
+              <td>
+                <div class="progress">
+                  <div class="progress-bar bg-success"
+                       role="progressbar"
+                       [style.width.%]="(project.amountRaised / project.fundingGoal) * 100"
+                       [attr.aria-valuenow]="(project.amountRaised / project.fundingGoal) * 100"
+                       aria-valuemin="0"
+                       aria-valuemax="100">
+                    {{ (project.amountRaised / project.fundingGoal) * 100 }}%
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </ng-container>
+  </ng-container>
+</div>
