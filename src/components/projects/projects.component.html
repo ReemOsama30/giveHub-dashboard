@@ -1,16 +1,16 @@
-<div class="container mt-3">
+<div class="container mt-3 user-table-container">
   <h2 class="my-5">All Projects</h2>
   <ng-container *ngIf="charityProjects">
     <ng-container *ngFor="let charityName of getCharityNames()">
-      <h3>Charity Name : {{ charityName }}</h3>
+      <h3>Charity Name: {{ charityName }}</h3>
       <div class="table-responsive">
-        <table class="table">
+        <table class="table user-table">
           <thead class="thead-dark">
             <tr>
-              <th scope="col">Project Name</th>
-              <th scope="col">Funding Goal</th>
-              <th scope="col">Amount Raised</th>
-              <th scope="col">Status</th>
+              <th scope="col" class="headStyle">Project Name</th>
+              <th scope="col" class="headStyle">Funding Goal</th>
+              <th scope="col" class="headStyle">Amount Raised</th>
+              <th scope="col" class="headStyle">Status</th>
             </tr>
           </thead>
           <tbody>
@@ -20,7 +20,7 @@
               <td>{{ project.amountRaised }}</td>
               <td>
                 <div class="progress">
-                  <div class="progress-bar bg-success"
+                  <div class="progress-bar bg-primary"
                        role="progressbar"
                        [style.width.%]="(project.amountRaised / project.fundingGoal) * 100"
                        [attr.aria-valuenow]="(project.amountRaised / project.fundingGoal) * 100"
