@@ -30,15 +30,16 @@ export class LoginComponent {
         
         next: (response) => {
           
-          console.log(response);
+        
           if (response.isPass === true) {
             localStorage.setItem('token', response.message.token);
             this._AuthService.decodeUserData();
+            this._Router.navigate(['/home']);
          
           } 
         },
         error: (err) => {
-          this._Router.navigate(['/home']);
+       
           console.log('Login failed:', err.error);
         }
       });
