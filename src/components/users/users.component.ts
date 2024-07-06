@@ -39,10 +39,15 @@ export class UsersComponent implements OnInit {
   }
 
   getBadgeClass(accountType: string): string {
-    return accountType === 'donor' ? 'loyal' : 'team';
-
-
+    if (accountType === 'Admin') {
+      return 'admin';
+    } else if (accountType === 'donor') {
+      return 'loyal';
+    } else {
+      return 'team';
+    }
   }
+  
 
 
   getBadgeClassEmail(emailConfirmation:boolean):string{
