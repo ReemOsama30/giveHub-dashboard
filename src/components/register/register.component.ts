@@ -29,7 +29,7 @@ registerForm: FormGroup = new FormGroup({
   // confirmEmail: new FormControl('', [Validators.required, Validators.email]),
   password: new FormControl('', [Validators.required, Validators.pattern(/^(?=.*[A-Z])(?=.*[\d])(?=.*[!@#$%^&*()_+\-=\[\]{}|;':"\\,.<>\/?]).{6,20}$/)]),
   rePassword: new FormControl(''),
-  accountType: new FormControl('')
+  accountType: new FormControl('Admin')
 }, { validators: [this.confirmPassword, this.confirmEmail] } as FormControlOptions);
 
   confirmPassword(group: FormGroup): void {
@@ -61,7 +61,8 @@ registerForm: FormGroup = new FormGroup({
    
      
       console.log(this.registerForm.value);
-      this._AuthService.setRegister(this.userData).subscribe({
+
+      this._AuthService.setRegister(this.registerForm.value).subscribe({
         next: (response) => {
           console.log(response)
         
