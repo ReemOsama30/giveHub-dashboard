@@ -96,7 +96,7 @@ body {
 }
 
 .badge.loyal { background-color: #5bc0de; }
-.badge.partner { background-color: #f0ad4e; }
+.badge.admin { background-color: #f0ad4e; }
 .badge.team { background-color: #5cb85c; }
 .badge.inactive { background-color: #d9534f; }
 .badge.active { background-color: #0275d8; }
