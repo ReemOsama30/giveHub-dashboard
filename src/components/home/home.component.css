@@ -11,6 +11,11 @@ header {
     text-align: center;
 }
 
+.title{
+    text-align: center;
+    font-weight: bold;
+}
+
 .conference-banner {
     display: flex;
     justify-content: center;
@@ -109,7 +114,11 @@ div[class*=box] {
   }
   
 
-  .box-3 { background-color: #66A182; }
+  .box-3 { background-color: #66A182; 
+text-align: center;
+
+
+}
   
   .btn {
     line-height: 50px;
@@ -117,6 +126,7 @@ div[class*=box] {
     text-align: center;
     width: 200px;
     cursor: pointer;
+    text-align: center;
   }
 .btn-three {
     color: #FFF;

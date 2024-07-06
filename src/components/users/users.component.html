@@ -1,44 +1,43 @@
 <!-- src/app/user-table/user-table.component.html -->
-<div class="filter-container">
-    <button class="filter-button">+ Add Filter</button>
-    <div class="filter">
-      <span>Role is not Administrator</span>
-      <button class="remove-filter">×</button>
-    </div>
-  </div>
-  <div class="user-table-container container">
-    <div class="user-count">
-      <span>{{users.length}} / <strong>{{users.length}}</strong> users</span>
-    </div>
-    <table class="user-table">
-      <thead>
-        <tr>
-          <th>USERNAME</th>
-          <th>User Image</th>
-          <th>Account Type</th>
-          <th>E-MAIL</th>
-          <th>Email Confirmed</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let user of users">
-          <td>{{ user.name }}</td>
-          <td><img [src]="getFullImageUrl(user.image)" alt="User Image" class="img"></td>
-          <td>
-            <span class="badge" [ngClass]="getBadgeClass(user.accountType)">
-              {{ user.accountType }}
-            </span>
-          </td>
-          <td>{{ user.email }}</td>
 
-          <td>
-            <span class="badge" [ngClass]="getBadgeClassEmail(user.emailConfirmed)">
-            
-            {{ user.emailConfirmed }}
-        </span>
-        </td>
-        </tr>
-      </tbody>
-    </table>
-    <app-projects></app-projects>
+<div class="user-table-container container">
+  <div class="user-count">
+    <span>{{users.length}} / <strong>{{users.length}}</strong> users</span>
   </div>
+  <table class="user-table">
+    <thead>
+      <tr>
+        <th>USERNAME</th>
+        <th>User Image</th>
+        <th>Account Type</th>
+        <th>E-MAIL</th>
+        <th>Email Confirmed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.name }}</td>
+        <td>
+          <ng-container *ngIf="user.accountType !== 'Admin'; else adminImage">
+            <img [src]="getFullImageUrl(user.image)" alt="User Image" class="img">
+          </ng-container>
+          <ng-template #adminImage>
+            <img src="assets/images/admin.png" alt="Default Admin Image" class="img">
+          </ng-template>
+        </td>
+        <td>
+          <span class="badge" [ngClass]="getBadgeClass(user.accountType)">
+            {{ user.accountType }}
+          </span>
+        </td>
+        <td>{{ user.email }}</td>
+        <td>
+          <span class="badge" [ngClass]="getBadgeClassEmail(user.emailConfirmed)">
+            {{ user.emailConfirmed }}
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <app-projects></app-projects>
+</div>

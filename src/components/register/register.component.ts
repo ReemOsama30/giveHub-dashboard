@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../../Services/authService/auth.service';
 import { Router } from '@angular/router';
 import { FormControl, FormControlOptions, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { routes } from '../../app/app.routes';
 
 @Component({
   selector: 'app-register',
@@ -28,7 +29,7 @@ registerForm: FormGroup = new FormGroup({
   // confirmEmail: new FormControl('', [Validators.required, Validators.email]),
   password: new FormControl('', [Validators.required, Validators.pattern(/^(?=.*[A-Z])(?=.*[\d])(?=.*[!@#$%^&*()_+\-=\[\]{}|;':"\\,.<>\/?]).{6,20}$/)]),
   rePassword: new FormControl(''),
-  accountType: new FormControl('')
+  accountType: new FormControl('Admin')
 }, { validators: [this.confirmPassword, this.confirmEmail] } as FormControlOptions);
 
   confirmPassword(group: FormGroup): void {
@@ -58,15 +59,16 @@ registerForm: FormGroup = new FormGroup({
   handleForm(): void {
     if (this.registerForm.valid) {
    
-      localStorage.setItem('charityName', this.registerForm.get('userName')?.value);
-      console.log(localStorage.getItem('charityName'));
+     
       console.log(this.registerForm.value);
-      this._AuthService.setRegister(this.userData).subscribe({
+
+      this._AuthService.setRegister(this.registerForm.value).subscribe({
         next: (response) => {
           console.log(response)
         
           if (response.isPass == true) {
 console.log("registered");
+this._Router.navigate(['/login']);
           
           }
 
@@ -79,9 +81,7 @@ console.log("registered");
 
     }
 
-    else {
-      this.registerForm.markAllAsTouched();
-    }
+   
   }
 
 }

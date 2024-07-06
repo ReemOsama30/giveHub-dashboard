@@ -12,7 +12,10 @@ export const routes: Routes = [
 {path:"login",component:LoginComponent},
 {path:"users",component:UsersComponent},
 {path:"home",component:HomeComponent},
-{path:"register",component:RegisterComponent},
+
+
+{path:"registeration",component:RegisterComponent},
 {path:"projects",component:ProjectsComponent},
 {path:"charts",component:ChartdashboardComponent}
+
 ];
