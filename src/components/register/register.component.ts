@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../../Services/authService/auth.service';
 import { Router } from '@angular/router';
 import { FormControl, FormControlOptions, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { routes } from '../../app/app.routes';
 
 @Component({
   selector: 'app-register',
@@ -58,8 +59,7 @@ registerForm: FormGroup = new FormGroup({
   handleForm(): void {
     if (this.registerForm.valid) {
    
-      localStorage.setItem('charityName', this.registerForm.get('userName')?.value);
-      console.log(localStorage.getItem('charityName'));
+     
       console.log(this.registerForm.value);
       this._AuthService.setRegister(this.userData).subscribe({
         next: (response) => {
@@ -67,6 +67,7 @@ registerForm: FormGroup = new FormGroup({
         
           if (response.isPass == true) {
 console.log("registered");
+this._Router.navigate(['/login']);
           
           }
 
@@ -79,9 +80,7 @@ console.log("registered");
 
     }
 
-    else {
-      this.registerForm.markAllAsTouched();
-    }
+   
   }
 
 }
