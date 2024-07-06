@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row" style="margin-top: 10px; margin-left: 10px;">
+    <div class="col-md-3 stat-box" style="width: 250px;  height: 150px;">
+      <h6 >Total Donations</h6>
+      <p style="font-weight: 700; font-size: 25px; padding-top: 25px;">{{totalDonations}}</p>
+     
+    </div>
+    <div class="col-md-3 stat-box" style="width: 250px;  height: 150px;">
+      <h6 style="font-size: 22px;">Total Money Donations</h6>
+      <p style="font-weight: 700; font-size: 25px; padding-top: 25px;" >{{totalMoneyDonations}}</p>
+   
+    </div>
+    <div class="col-md-3 stat-box"  style="width: 250px;  height: 150px;">
+      <h6 style="font-size: 22px;">Total In-Kind Donations</h6>
+      <p style="font-weight: 700; font-size: 25px; padding-top: 25px;">{{totalInKindDonations}}</p>
+     
+    </div>
+    <div class="col-md-3 stat-box" style="width: 400px;  height: 210px; margin-right: 10px;">
+    
+      <div class="chart-small" [chart]="donationChart"></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 chart-box" style="width: 579px; height: 500px; margin:10px;">
+      <div class="chart-container" >
+        
+        <div class="" [chart]="charityPerformanceChart"></div>
+      </div>
+    </div>
+    <div class="col-md-6 chart-box" style="width: 579px; height: 500px; margin:10px">
+      <div class="chart-container" >
+       
+        <div class="" [chart]="projectsChart"></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -4,6 +4,8 @@ import { UsersComponent } from '../components/users/users.component';
 import { HomeComponent } from '../components/home/home.component';
 import { RegisterComponent } from '../components/register/register.component';
 import { ProjectsComponent } from '../components/projects/projects.component';
+import { ChartdashboardComponent } from '../components/chartdashboard/chartdashboard.component';
+
 
 export const routes: Routes = [
 {path:"",redirectTo:"home", pathMatch: 'full'},
@@ -11,5 +13,6 @@ export const routes: Routes = [
 {path:"users",component:UsersComponent},
 {path:"home",component:HomeComponent},
 {path:"register",component:RegisterComponent},
-{path:"projects",component:ProjectsComponent}
+{path:"projects",component:ProjectsComponent},
+{path:"charts",component:ChartdashboardComponent}
 ];
