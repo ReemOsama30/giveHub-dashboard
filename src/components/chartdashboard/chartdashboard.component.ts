@@ -6,7 +6,7 @@ import { DonnationService } from '../../Services/donationService/donnation.servi
 @Component({
   selector: 'app-chartdashboard',
   standalone: true,
-  imports: [ChartModule],
+  imports:[ChartModule],
   templateUrl: './chartdashboard.component.html',
   styleUrl: './chartdashboard.component.css'
 })
