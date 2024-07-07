@@ -132,6 +132,7 @@ text-align: center;
     color: #FFF;
     transition: all 0.5s;
     position: relative;
+    padding-top: 1px;
   }
   .btn-three::before {
     content: '';

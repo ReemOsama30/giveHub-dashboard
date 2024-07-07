@@ -32,7 +32,7 @@ export class LoginComponent {
           
         
           if (response.isPass === true) {
-            localStorage.setItem('token', response.message.token);
+            localStorage.setItem('Token', response.message.token);
             this._AuthService.decodeUserData();
             this._Router.navigate(['/home']);
          

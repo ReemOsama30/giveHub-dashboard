@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { jwtDecode } from 'jwt-decode';
 import { Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -24,13 +25,14 @@ export class AuthService {
   }
 
   setLogIn(userData: any): Observable<any> {
+    this.loggedIn.next(true);
     return this._HttpClient.post(`https://localhost:44377/api/Account/log-in`, userData)
   }
 
  
 
   decodeUserData(): void {
-    const token = localStorage.getItem('eToken');
+    const token = localStorage.getItem('Token');
     if (token) {
       try {
         const decodedToken: any = jwtDecode(token);
@@ -50,7 +52,7 @@ export class AuthService {
   }
 
   getUserId(): string | null {
-    const token = localStorage.getItem('eToken');
+    const token = localStorage.getItem('Token');
     if (token) {
       const decodedToken: any = jwtDecode(token);
       return decodedToken["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"] || null;
@@ -59,7 +61,7 @@ export class AuthService {
   }
 
   getUserAccountType(): string | null {
-    const token = localStorage.getItem('eToken');
+    const token = localStorage.getItem('Token');
     if (token) {
 
      // const decodedToken: JwtPayload & { [key: string]: any } = jwtDecode(token);
@@ -72,7 +74,16 @@ console.log(token);
   }
 
   logOut(): void {
-    localStorage.removeItem('eToken');
-    this._Router.navigate(['/home']);
+    localStorage.removeItem('Token');
+    this._Router.navigate(['/login']);
+    this.loggedIn.next(false);
   }
+  private loggedIn = new BehaviorSubject<boolean>(false);
+
+  get isLoggedIn() {
+    return this.loggedIn.asObservable();
+  }
+
+
+
 }
