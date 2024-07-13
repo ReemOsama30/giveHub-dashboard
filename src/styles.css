@@ -5,31 +5,41 @@ html, body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+/* Light theme (default) */
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --primary-color: #6200ea; /* Example primary color */
+  --accent-color: #dad303; /* Example accent color */
+}
 
 /* Dark theme variables */
 .dark-theme {
-  background-color: purple;
-  color: #ffffff;
+  --background-color: purple;
+  --text-color: #6b3466;
+  --primary-color: #bb86fc; /* Dark theme primary color */
+  --accent-color: #7203da; /* Accent color for dark theme */
 }
 
-/* Light theme variables */
-.light-theme {
 
-  background-color: #ffffff; /* Light background color */
-  color: #000000; /* Dark text color */
-}
-
-/* Apply the theme colors */
 body {
   background-color: var(--background-color);
   color: var(--text-color);
 }
 
-/* Example for Angular Material components */
-.mat-slide-toggle.mat-checked {
+/* Angular Material components */
+.mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
   background-color: var(--primary-color);
 }
 
 .mat-icon {
   color: var(--accent-color);
+}
+.navbar {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+footer {
+  background-color: var(--background-color);
+  color: var(--text-color);
 }

@@ -6,10 +6,20 @@
     <title>Slack Landing Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="section">
+<body class="section theme-container">
    
+    <div id="theme-container">
+        <div class="toggle-container">
+          <mat-slide-toggle 
+            [checked]="isNightMode" 
+            (change)="toggleMode()" 
+            color="primary">
+            <mat-icon>{{ isNightMode ? 'nights_stay' : 'wb_sunny' }}</mat-icon>
+          </mat-slide-toggle>
+        </div>
+    </div>
     <main>
-        <section class="main-content section">
+        <section class="main-content section theme-container">
             <div class="image-container">
                 <img src="assets/images/work.avif" alt="Project Mobile">
             </div>
@@ -20,8 +30,8 @@
                   
 
                     <div class="box-3">
-                        <div class="btn btn-three">
-                          <span>GET STARTED</span>
+                        <div class="btn btn-three theme-container">
+                          <span class="theme-container">GET STARTED</span>
                         </div>
                       </div>
                       
