@@ -1,7 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+/* Base styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Dark theme variables */
+.dark-theme {
+  background-color: purple;
+  color: #ffffff;
+}
+
+/* Light theme variables */
+.light-theme {
+
+  background-color: #ffffff; /* Light background color */
+  color: #000000; /* Dark text color */
+}
+
+/* Apply the theme colors */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Example for Angular Material components */
+.mat-slide-toggle.mat-checked {
+  background-color: var(--primary-color);
+}
+
+.mat-icon {
+  color: var(--accent-color);
+}
