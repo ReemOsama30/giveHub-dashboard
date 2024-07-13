@@ -30,13 +30,13 @@ export class LoginComponent {
         
         next: (response) => {
           
-        
+     
           if (response.isPass === true) {
             localStorage.setItem('Token', response.message.token);
             this._AuthService.decodeUserData();
             this._Router.navigate(['/home']);
          
-          } 
+          }
         },
         error: (err) => {
        

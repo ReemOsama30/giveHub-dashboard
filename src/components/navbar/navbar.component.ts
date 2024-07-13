@@ -3,11 +3,12 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../../Services/authService/auth.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
+import { MatSlideToggleModule } from '@angular/material/slide-toggle'; 
+import { SwitchButtonComponent } from '../switch-button/switch-button.component';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [RouterLink,RouterLinkActive,FormsModule,CommonModule],
+  imports: [RouterLink,RouterLinkActive,FormsModule,CommonModule ,MatSlideToggleModule,SwitchButtonComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
