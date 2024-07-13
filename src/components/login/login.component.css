@@ -19,9 +19,9 @@ body, html {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     position: relative;
     overflow: hidden;
-    width: 768px;
+    width: 900px; /* Increased width */
     max-width: 100%;
-    min-height: 480px;
+    min-height: 600px; /* Increased height */
 }
 
 .form-container {
@@ -29,16 +29,10 @@ body, html {
     top: 0;
     height: 100%;
     transition: all 0.6s ease-in-out;
+    width: 60%; /* Adjust width if needed */
 }
 
-.sign-up-container {
-    left: 0;
-    width: 50%;
-    opacity: 0;
-    z-index: 1;
-}
-
-.sign-in-container {
+.sign-up-container, .sign-in-container {
     left: 0;
     width: 50%;
     z-index: 2;
@@ -60,7 +54,6 @@ body, html {
         opacity: 0;
         z-index: 1;
     }
-
     50%, 100% {
         opacity: 1;
         z-index: 5;
@@ -85,7 +78,7 @@ body, html {
 .overlay {
     background: #2BB7B3;
     background: -webkit-linear-gradient(to right, #2BB7B3, #00D1A0);
-    background: linear-gradient(to right, #2BB7B3, #00D1A0);
+    background: linear-gradient(to right, #942bb7, #00D1A0);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 0;
@@ -108,7 +101,7 @@ body, html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 40px;
+    padding: 0 60px; /* Increased padding */
     text-align: center;
     top: 0;
     height: 100%;
@@ -140,48 +133,28 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 50px;
+    padding: 0 70px; /* Increased padding */
     height: 100%;
     text-align: center;
 }
 
 h2 {
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 30px; /* Increased margin */
 }
 
 p {
-    font-size: 14px;
+    font-size: 16px; /* Increased font size */
     font-weight: 100;
-    line-height: 20px;
+    line-height: 22px; /* Increased line height */
     margin: 20px 0 30px;
-}
-
-.social-media {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.social-btn {
-    border: 1px solid #ddd;
-    border-radius: 50%;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
-    width: 40px;
-    margin: 0 5px;
-    font-size: 20px;
-    color: #333;
-    cursor: pointer;
 }
 
 input {
     background-color: #eee;
     border: none;
-    padding: 12px 15px;
-    margin: 8px 0;
+    padding: 15px 20px; /* Increased padding */
+    margin: 10px 0; /* Increased margin */
     width: 100%;
     border-radius: 5px;
 }
@@ -191,9 +164,9 @@ button {
     border: 1px solid #2BB7B3;
     background-color: #2BB7B3;
     color: #FFFFFF;
-    font-size: 12px;
+    font-size: 14px; /* Increased font size */
     font-weight: bold;
-    padding: 12px 45px;
+    padding: 15px 50px; /* Increased padding */
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: transform 80ms ease-in;
@@ -209,3 +182,17 @@ button.ghost {
     border-color: #FFFFFF;
 }
 
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .form-container {
+        width: 100%;
+    }
+
+    form {
+        padding: 0 20px;
+    }
+}

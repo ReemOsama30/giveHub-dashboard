@@ -7,7 +7,7 @@ html, body {
 
 /* Light theme (default) */
 :root {
-  --background-color: #ffffff;
+  --background-color: #dee8d2b7;
   --text-color: #000000;
   --primary-color: #6200ea; /* Example primary color */
   --accent-color: #dad303; /* Example accent color */
@@ -15,10 +15,10 @@ html, body {
 
 /* Dark theme variables */
 .dark-theme {
-  --background-color: purple;
-  --text-color: #6b3466;
-  --primary-color: #bb86fc; /* Dark theme primary color */
-  --accent-color: #7203da; /* Accent color for dark theme */
+  --background-color: rgb(16, 9, 35);
+  --text-color: #fff8f8;
+  --primary-color: #c8bcd7; /* Dark theme primary color */
+  --accent-color: #e1cef4; /* Accent color for dark theme */
 }
 
 
@@ -39,6 +39,12 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
 }
+.navbar .nav-link{
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+
 footer {
   background-color: var(--background-color);
   color: var(--text-color);
