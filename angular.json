@@ -13,6 +13,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+
+            
             "outputPath": "dist/give-hub-dashboard",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -87,8 +89,9 @@
               "src/assets"
             ],
             "styles": [
+          
               "@angular/material/prebuilt-themes/azure-blue.css",
-              "src/styles.css",
+            "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.css"
             ],

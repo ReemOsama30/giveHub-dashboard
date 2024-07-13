@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatIconModule } from '@angular/material/icon';
+import { ThemeService } from '../../Services/themeService/theme.service';
 @Component({
   selector: 'app-switch-button',
   standalone: true,
@@ -9,12 +10,15 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './switch-button.component.css'
 })
 export class SwitchButtonComponent {
-  isNightMode: boolean = false;
+  isDarkMode: boolean;
 
-  toggleMode() {
-    this.isNightMode = !this.isNightMode;
-    document.body.classList.toggle('dark-theme', this.isNightMode);
-    document.body.classList.toggle('light-theme', !this.isNightMode);
+  constructor(private themeService: ThemeService) {
+    this.isDarkMode = this.themeService.isDarkMode();
+  }
+
+  toggleTheme() {
+    this.isDarkMode = !this.isDarkMode;
+    this.themeService.setDarkMode(this.isDarkMode);
   }
   }
 

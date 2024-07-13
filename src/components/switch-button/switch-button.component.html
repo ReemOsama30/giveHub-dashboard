@@ -1,9 +1,8 @@
 <div class="toggle-container">
-    <mat-slide-toggle 
-      [checked]="isNightMode" 
-      (change)="toggleMode()" 
-      color="primary">
-      <mat-icon>{{ isNightMode ? 'nights_stay' : 'wb_sunny' }}</mat-icon>
-    </mat-slide-toggle>
-  </div>
-  
+  <mat-slide-toggle 
+    [checked]="isDarkMode" 
+    (change)="toggleTheme()" 
+    color="primary">
+    <mat-icon>{{ isDarkMode ? 'nights_stay' : 'wb_sunny' }}</mat-icon>
+  </mat-slide-toggle>
+</div>
