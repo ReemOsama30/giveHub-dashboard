@@ -12,7 +12,7 @@ import { routes } from '../../app/app.routes';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
-
+  isArabic: boolean = true;
   userData: any = {
     userName: '',
     password: '',

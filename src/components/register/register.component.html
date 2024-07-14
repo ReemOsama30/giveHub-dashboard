@@ -13,7 +13,7 @@
             <form  [formGroup]="registerForm" (ngSubmit)="handleForm()">
                 <h2>Welcome Back!</h2>
                 <p>To keep connected with us please login with your personal info</p>
-                <input type="text" formControlName="userName" placeholder="user name">
+                <input type="text" formControlName="userName" placeholder="user name" [attr.dir]="isArabic ? 'rtl' : 'ltr'">
                 <input type="email" formControlName="email" placeholder="Email" required>
          
                 <input type="password" formControlName="password" placeholder="Password" required>
