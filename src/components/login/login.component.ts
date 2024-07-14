@@ -12,6 +12,7 @@ import { AuthService } from '../../Services/authService/auth.service';
 })
 export class LoginComponent {
 
+  isArabic: boolean = true;
   constructor(private _Router:Router,private _AuthService:AuthService)
   {
 

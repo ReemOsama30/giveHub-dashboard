@@ -57,7 +57,8 @@ registerForm: FormGroup = new FormGroup({
   }
 
   handleForm(): void {
-    if (this.registerForm.valid) {
+    console.log("hello");
+   
    
      
       console.log(this.registerForm.value);
@@ -79,7 +80,7 @@ this._Router.navigate(['/login']);
         }
       });
 
-    }
+    
 
    
   }

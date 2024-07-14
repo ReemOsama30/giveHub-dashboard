@@ -15,9 +15,9 @@ html, body {
 
 /* Dark theme variables */
 .dark-theme {
-  --background-color: rgb(16, 9, 35);
+  --background-color: rgb(28, 21, 51);
   --text-color: #fff8f8;
-  --primary-color: #c8bcd7; /* Dark theme primary color */
+  --primary-color: #cbd114; /* Dark theme primary color */
   --accent-color: #e1cef4; /* Accent color for dark theme */
 }
 

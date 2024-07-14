@@ -11,7 +11,7 @@
             <form [formGroup]="logInForm" (ngSubmit)="handleForm()">
                 <h2>Welcome Back!</h2>
                 <p>To keep connected with us please login with your personal info</p>
-                <input type="text" formControlName="userName" placeholder="User name" required>
+                <input type="text" formControlName="userName" placeholder="User name" [attr.dir]="isArabic ? 'rtl' : 'ltr'" required>
                 <input type="password" formControlName="password" placeholder="Password" required>
                 <button type="submit" class="sign-in-btn">SIGN IN</button>
             </form>
