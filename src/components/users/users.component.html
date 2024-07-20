@@ -12,6 +12,7 @@
         <th>Account Type</th>
         <th>E-MAIL</th>
         <th>Email Confirmed</th>
+        <th>user State</th>
       </tr>
     </thead>
     <tbody>
@@ -35,6 +36,13 @@
           <span class="badge" [ngClass]="getBadgeClassEmail(user.emailConfirmed)">
             {{ user.emailConfirmed }}
           </span>
+        </td>
+
+
+        <td>
+         <a href=""><img src="/assets/images/check.png" class="icons"></a>
+         <a><img src="/assets/images/lock.png" class="icons"></a>
+         <a><img src="/assets/images/button.png" class="icons"></a>
         </td>
       </tr>
     </tbody>

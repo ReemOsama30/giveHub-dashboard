@@ -100,3 +100,9 @@ body {
 .badge.team { background-color: #5cb85c; }
 .badge.inactive { background-color: #d9534f; }
 .badge.active { background-color: #0275d8; }
+.icons{
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+    margin: 6px;
+}
