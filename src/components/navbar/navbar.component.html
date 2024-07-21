@@ -16,10 +16,14 @@
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/charts']">Charts</a>
         </li>
+
+     
       </ul>
+      <i class="fa-regular fa-bell icon" *ngIf="isLoggedIn"></i>
+      
       <button *ngIf="isLoggedIn" class="btn btn-outline-danger" type="button" (click)="logout()">Logout</button>
     </div>
   </div>
-
+  
   <app-switch-button></app-switch-button>
 </nav>
