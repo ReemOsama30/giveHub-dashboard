@@ -1,6 +1,9 @@
 <!-- src/app/user-table/user-table.component.html -->
 
 <div class="user-table-container container">
+  <div class="search-bar-container">
+    <input type="text" class="search-bar" placeholder="Search users..." >
+  </div>
   <div class="user-count">
     <span>{{users.length}} / <strong>{{users.length}}</strong> users</span>
   </div>
@@ -41,7 +44,7 @@
 
         <td>
        
-        <button class="block "><i class="fa-solid fa-user-slash"></i> Block </button>
+        <button class="btn btn-outline "><i class="fa-solid fa-user-slash"></i> Block </button>
         </td>
       </tr>
     </tbody>
