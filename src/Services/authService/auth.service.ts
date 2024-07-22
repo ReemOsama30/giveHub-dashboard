@@ -20,7 +20,7 @@ export class AuthService {
 
 
   setRegister(userData: any): Observable<any> {
-    return this._HttpClient.post(`https://localhost:44377/api/Account/register`, userData);
+    return this._HttpClient.post(`https://localhost:44377/api/Account/Admin-register`, userData);
 
   }
 

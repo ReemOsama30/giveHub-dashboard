@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../../Services/UserService/users.service';
 import { CommonModule } from '@angular/common';
 import { ProjectsComponent } from '../projects/projects.component';
+import AccountType from '../../../enums/AccountType';
+import { AccountTypePipe } from '../../Pips/account-type.pipe';
 
 @Component({
   selector: 'app-users',
   standalone: true,
-  imports: [CommonModule,ProjectsComponent],
+  imports: [CommonModule,ProjectsComponent,AccountTypePipe],
   templateUrl: './users.component.html',
   styleUrl: './users.component.css'
 })
@@ -38,18 +40,17 @@ export class UsersComponent implements OnInit {
     return `https://localhost:44377${relativePath}`;
   }
 
-  getBadgeClass(accountType: string): string {
-    if (accountType === 'Admin') {
+  getBadgeClass(accountType: AccountType): string {
+    if (accountType === 0) {
       return 'admin';
-    } else if (accountType === 'donor') {
+    } else if (accountType === 1) {
       return 'loyal';
     } else {
       return 'team';
     }
   }
+
   
-
-
   getBadgeClassEmail(emailConfirmation:boolean):string{
     return emailConfirmation==true?'active':'inactive'
   }

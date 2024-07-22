@@ -22,7 +22,7 @@
       <tr *ngFor="let user of users">
         <td>{{ user.name }}</td>
         <td>
-          <ng-container *ngIf="user.accountType !== 'Admin'; else adminImage">
+          <ng-container *ngIf="user.accountType !==0; else adminImage">
             <img [src]="getFullImageUrl(user.image)" alt="User Image" class="img">
           </ng-container>
           <ng-template #adminImage>
@@ -31,7 +31,7 @@
         </td>
         <td>
           <span class="badge" [ngClass]="getBadgeClass(user.accountType)">
-            {{ user.accountType }}
+            <td>{{ user.accountType |accountType }}</td>
           </span>
         </td>
         <td>{{ user.email }}</td>
