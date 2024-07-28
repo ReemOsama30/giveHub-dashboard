@@ -6,6 +6,7 @@ import { RegisterComponent } from '../components/register/register.component';
 import { ProjectsComponent } from '../components/projects/projects.component';
 import { ChartdashboardComponent } from '../components/chartdashboard/chartdashboard.component';
 import { authGuard } from '../guards/auth/auth.guard';
+import { NotificationDropdownComponent } from '../components/notification-dropdown/notification-dropdown.component';
 
 
 export const routes: Routes = [
@@ -17,6 +18,7 @@ export const routes: Routes = [
 
 {path:"login",component:LoginComponent},
 {path:"registeration",component:RegisterComponent},
+{path:"notify",component:NotificationDropdownComponent}
 
 
 ];
