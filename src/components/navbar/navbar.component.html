@@ -8,15 +8,17 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" [routerLink]="['/home']">Home</a>
+          <a class="nav-link" aria-current="page" [routerLink]="['/home']"><i class="fa-solid fa-house-chimney"></i>Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/users']">Users dashboard</a>
+          <a class="nav-link" [routerLink]="['/users']"><i class="fa-solid fa-users"></i> Users dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/charts']">Charts</a>
+          <a class="nav-link" [routerLink]="['/charts']"><i class="fa-solid fa-chart-line"></i>Charts</a>
         </li>
-
+        <li class="nav-item">
+          <a class="nav-link" ><i class="fa-solid fa-bell"></i></a>
+        </li>
      
       </ul>
       <i class="fa-regular fa-bell icon" *ngIf="isLoggedIn"></i>
